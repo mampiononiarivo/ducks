@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Click for Quack</title>
+  <style>
+    body {
+      background: #fffbf0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Comic Sans MS, cursive;
+      cursor: pointer;
+    }
+    img {
+      max-width: 90%;
+      height: auto;
+      border: 10px dashed orange;
+      border-radius: 50%;
+    }
+    .text {
+      position: absolute;
+      top: 10px;
+      font-size: 2em;
+      color: darkorange;
+    }
+  </style>
+</head>
+<body onclick="quack()">
+  <div class="text">Click anywhere for a QUACK ??</div>
+  <img id="duck" src="https://random-d.uk/api/randomimg" alt="Random Duck">
+  <audio id="sound" src="https://www.soundjay.com/animal/duck-quack-1.mp3" preload="auto"></audio>
+
+  <script>
+    function quack() {
+      document.getElementById('sound').play();
+      document.getElementById('duck').src = "https://random-d.uk/api/randomimg?" + new Date().getTime();
+    }
+  </script>
+</body>
+</html>
